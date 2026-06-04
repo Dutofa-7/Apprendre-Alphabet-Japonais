@@ -218,14 +218,15 @@ function showQuizEnd() {
 }
 
 .settings-subtitle {
-  color: #888;
+  color: #aaa;
   margin-top: -12px;
+  font-size: 0.9em;
 }
 
 .mode-options {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
 }
 
 .mode-option {
@@ -233,29 +234,25 @@ function showQuizEnd() {
   align-items: flex-start;
   gap: 14px;
   padding: 16px 20px;
-  border: 2px solid #ddd;
-  border-radius: 10px;
+  border: 1.5px solid #e0d5c0;
+  border-radius: 2px;
   cursor: pointer;
+  background: #fff;
   transition: all 0.2s;
 }
 
-.mode-option:hover        { border-color: #667eea; }
-.mode-option.active       { border-color: #667eea; background: #f0f3ff; }
+.mode-option:hover  { border-color: #c0392b; background: rgba(192,57,43,0.04); }
+.mode-option.active { border-color: #c0392b; background: rgba(192,57,43,0.06); }
 
 .mode-option input[type="radio"] {
   margin-top: 4px;
-  accent-color: #667eea;
+  accent-color: #c0392b;
   flex-shrink: 0;
 }
 
-.mode-option-text {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.mode-option-text strong { font-size: 1em; }
-.mode-option-text span   { font-size: 0.85em; color: #777; }
+.mode-option-text { display: flex; flex-direction: column; gap: 4px; }
+.mode-option-text strong { font-size: 1em; color: #2d2d2d; }
+.mode-option-text span   { font-size: 0.85em; color: #999; }
 
 /* ── Quiz ── */
 .kanji-quiz {
@@ -265,17 +262,19 @@ function showQuizEnd() {
 }
 
 .kanji-display {
+  font-family: 'Noto Serif JP', Georgia, serif;
   text-align: center;
   font-size: 9em;
   line-height: 1;
-  color: #333;
-  padding: 10px 0;
+  color: #1a1a1a;
+  padding: 12px 0;
+  text-shadow: 2px 2px 0 rgba(0,0,0,0.06);
 }
 
 .pronunciation-slots {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
   max-width: 320px;
   margin: 0 auto;
   width: 100%;
@@ -283,46 +282,44 @@ function showQuizEnd() {
 
 .pron-slot {
   padding: 12px 20px;
-  border: 2px solid #ddd;
-  border-radius: 8px;
-  font-size: 1.15em;
+  border: 1.5px solid #e0d5c0;
+  border-radius: 2px;
+  font-size: 1.1em;
   text-align: center;
-  min-height: 50px;
+  min-height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.2s;
-  background: white;
+  background: #fff;
+  font-family: 'Noto Sans JP', sans-serif;
 }
 
-.pron-slot.found     { border-color: #4caf50; background: #e8f5e9; color: #2e7d32; font-weight: 600; }
-.pron-slot.active    { border-color: #667eea; background: #f0f3ff; color: #667eea; }
-.pron-slot.pending   { opacity: 0.35; }
-.pron-slot.skipped   { opacity: 0.2; }
-.pron-slot.incorrect { border-color: #f44336; background: #ffebee; animation: shake 0.4s ease; }
+.pron-slot.found     { border-color: #27ae60; background: #f0faf3; color: #1e8449; font-weight: 600; }
+.pron-slot.active    { border-color: #c0392b; background: rgba(192,57,43,0.05); color: #c0392b; }
+.pron-slot.pending   { opacity: 0.3; }
+.pron-slot.skipped   { opacity: 0.15; }
+.pron-slot.incorrect { border-color: #e74c3c; background: #fdf0ee; animation: shake 0.4s ease; }
 
 .slot-typing { font-style: italic; }
 
-.quiz-actions {
-  display: flex;
-  justify-content: center;
-}
+/* ── Bouton passer ── */
+.quiz-actions { display: flex; justify-content: center; }
 
 .skip-btn {
   padding: 8px 24px;
   background: transparent;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+  border: 1px solid #d0c8b8;
+  border-radius: 2px;
   cursor: pointer;
-  font-size: 0.9em;
-  color: #999;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 0.85em;
+  color: #bbb;
+  letter-spacing: 0.04em;
   transition: all 0.2s;
 }
 
-.skip-btn:hover {
-  border-color: #667eea;
-  color: #667eea;
-}
+.skip-btn:hover { border-color: #c0392b; color: #c0392b; }
 
 @keyframes shake {
   0%, 100% { transform: translateX(0); }
