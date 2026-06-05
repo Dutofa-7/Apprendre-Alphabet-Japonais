@@ -147,6 +147,33 @@ h2 {
   background: rgba(192, 57, 43, 0.05);
 }
 
+.control-btn.active {
+  border-color: #c0392b;
+  color: #c0392b;
+  background: rgba(192, 57, 43, 0.08);
+}
+
+.romaji-toggle-btn {
+  padding: 6px 14px;
+  background: transparent;
+  border: 1px dashed #c0392b;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.85em;
+  color: #c0392b;
+  transition: all 0.2s;
+  margin-left: auto;
+}
+
+.romaji-toggle-btn:hover {
+  background: rgba(192, 57, 43, 0.06);
+}
+
+.romaji-toggle-btn.active {
+  background: rgba(192, 57, 43, 0.1);
+  border-style: solid;
+}
+
 /* ── Grille des groupes ── */
 .groups-container {
   display: grid;

@@ -8,6 +8,7 @@ const emit  = defineEmits(['start-quiz'])
 const selectionMode      = ref('lines')
 const selectedGroups     = ref({})
 const selectedCharacters = ref([])
+const showRomaji         = ref(false)
 
 const groups = computed(() => characterGroups[props.currentType])
 const chars  = computed(() => characterData[props.currentType])
@@ -115,6 +116,9 @@ function startQuiz() {
       <div class="selection-controls">
         <button class="control-btn" @click="selectAllChars">Tous</button>
         <button class="control-btn" @click="deselectAllChars">Aucun</button>
+        <button class="romaji-toggle-btn" :class="{ active: showRomaji }" @click="showRomaji = !showRomaji">
+          {{ showRomaji ? '👁 Masquer' : '👁 Prononciations' }}
+        </button>
       </div>
       <div class="character-grid">
         <div
@@ -125,7 +129,7 @@ function startQuiz() {
           @click="toggleCharacter(item.char)"
         >
           <span>{{ item.char }}</span>
-          <span class="romaji">{{ item.romaji }}</span>
+          <span v-if="showRomaji" class="romaji">{{ item.romaji }}</span>
         </div>
       </div>
     </div>
